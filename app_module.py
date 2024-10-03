@@ -2,11 +2,12 @@ from typing import Annotated
 from injector import Module, singleton
 
 
-# This is the main module that binds the interfaces to the implementations This approach allows you to centralize and
-# manage all your dependency bindings in one place, making it easier to maintain and modify your application's
-# dependency structure. By subclassing Module and implementing the configure method, you're essentially telling the
-# injector library, "Here's how I want my application's dependencies to be set up." This is a key part of the
-# dependency injection pattern, allowing you to decouple the configuration of objects from their usage.
+# This is the main module that binds the interfaces to the implementations
+# This approach allows you to centralize and manage all your dependency
+# bindings in one place
+
+# There are several ways to wire dependency injection in Python,
+# but I find using AppModule to be the cleanest approach.
 
 class AppModule(Module):
     def configure(self, binder):

@@ -2,6 +2,7 @@ import logging
 from book_cache import BookCache
 
 
+# The MemoryCache class is a simple in-memory cache implementation that stores books in a dictionary.
 class MemoryCache(BookCache):
     def __init__(self):
         self.logger = logging.getLogger(__name__)

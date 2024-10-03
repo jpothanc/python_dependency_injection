@@ -4,7 +4,7 @@ import os
 
 from book_cache import BookCache
 
-
+# The DiskCache class is a cache implementation that stores books in a JSON file on disk.
 class DiskCache(BookCache):
     def __init__(self, file_path='books_cache.json'):
         self.logger = logging.getLogger(__name__)

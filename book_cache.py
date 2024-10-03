@@ -1,5 +1,11 @@
 from abc import ABC, abstractmethod
 
+
+# The BookCache abstract class defines the interface that all cache implementations must implement.
+# This ensures that all cache implementations have the same set of methods,
+# making it easy to switch between different implementations
+
+
 class BookCache(ABC):
     @abstractmethod
     def get_all_books(self):
@@ -20,4 +26,3 @@ class BookCache(ABC):
     @abstractmethod
     def delete_book(self, book_id):
         pass
-

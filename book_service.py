@@ -4,15 +4,23 @@ from book import Book
 from book_cache import BookCache
 
 
+# The BookService class is the main service class that interacts with the BookCache.
 class BookService:
+
     @inject
     def __init__(self, book_cache: BookCache):
+        """
+        Constructor for BookService
+        :param book_cache:
+        The @inject decorator tells the injector
+        which BookCache implementation to use.
+        """
         self.book_cache = book_cache
         self.logger = logging.getLogger(__name__)
         self.logger.info("BookService initialized")
 
     def get_all_books(self) -> list[Book]:
-        return self.book_repository.get_all_books()
+        return self.book_cache.get_all_books()
 
     def get_book_by_id(self, book_id) -> Book:
         return self.book_cache.get_book_by_id(book_id)
